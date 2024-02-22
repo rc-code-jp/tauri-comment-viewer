@@ -20,8 +20,14 @@
     "windows": [
       {
         "title": "tauri-comment-viewer",
+        "theme": "Dark",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "fullscreen": false,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": false
       }
     ],
     "security": {
@@ -38,6 +44,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ]
-    }
+    },
+    "macOSPrivateApi": true
   }
 }
