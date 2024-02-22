@@ -9,6 +9,14 @@ fn greet(name: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
+        // Dockから消す
+        .setup(|app| {
+            #[cfg(target_os = "macos")]
+            {
+                app.set_activation_policy(tauri::ActivationPolicy::Accessory);
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
